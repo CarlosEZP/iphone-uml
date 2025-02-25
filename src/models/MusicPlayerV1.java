@@ -14,8 +14,11 @@ public class MusicPlayerV1 implements MusicPlayer {
     }
 
     @Override
-    public void pause() {
-        System.out.println("The music was been paused");
+    public void pause() throws IllegalMusicExecution{
+        if(this.selectedMusic.isEmpty())
+            throw new IllegalMusicExecution();
+        else
+            System.out.println("The music was been paused");
     }
 
     @Override

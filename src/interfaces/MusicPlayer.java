@@ -4,6 +4,6 @@ import src.exceptions.IllegalMusicExecution;
 
 public interface MusicPlayer {
     void play() throws IllegalMusicExecution;
-    void pause();
+    void pause() throws IllegalMusicExecution;
     void selectMusic(String music);
 }
