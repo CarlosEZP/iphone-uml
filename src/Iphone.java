@@ -2,7 +2,7 @@ package src;
 
 import src.exceptions.IllegalMusicExecution;
 import src.interfaces.MusicPlayer;
-import src.models.MusicPlayerV1;
+import src.classes.MusicPlayerV1;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package src.models;
+package src.classes;
 
 import src.exceptions.IllegalMusicExecution;
 import src.interfaces.MusicPlayer;
