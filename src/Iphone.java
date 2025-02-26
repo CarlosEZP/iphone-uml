@@ -20,7 +20,7 @@ public class Iphone{
             System.out.println("3 - Internet");
             System.out.println("4 - Turn Off");
 
-            int input = 0;
+            int input;
             input = getAndValidateInput();
 
             if(input == 1)
@@ -37,7 +37,7 @@ public class Iphone{
         MusicPlayer musicPlayer = new MusicPlayerV1();
         boolean onMusicPlayer = true;
         while (onMusicPlayer){
-            int input = 0;
+            int input;
             System.out.println("What you wanna do?");
             System.out.println("1 - Play music");
             System.out.println("2 - Pause music");
@@ -68,7 +68,7 @@ public class Iphone{
         InternetBrowser browser = new Safari();
         boolean onBrowser = true;
         while(onBrowser){
-            int input = 0;
+            int input;
             System.out.println("What you wanna do?");
             System.out.println("1 - Go to page");
             System.out.println("2 - Add new Tab");
@@ -91,7 +91,7 @@ public class Iphone{
     }
 
     public static int getAndValidateInput(){
-        int input = 0;
+        int input;
         do {
             input = sc.nextInt();
             if(input < 1 || input > 4)
