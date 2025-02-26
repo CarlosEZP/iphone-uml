@@ -1,8 +1,10 @@
 package src;
 
+import src.classes.Safari;
 import src.exceptions.IllegalMusicExecution;
 import src.interfaces.MusicPlayer;
 import src.classes.MusicPlayerV1;
+import src.models.InternetBrowser;
 
 import java.util.Scanner;
 
@@ -23,6 +25,8 @@ public class Iphone{
 
             if(input == 1)
                 musicPlayer();
+            if(input == 3)
+                internetBrowser();
             if(input == 4)
                 iphoneOn = false;
         }
@@ -56,6 +60,33 @@ public class Iphone{
             }catch (IllegalMusicExecution e){
                 System.out.println(e.getMessage());
             }
+        }
+    }
+
+    public static void internetBrowser(){
+        System.out.println("Opening Safari...");
+        InternetBrowser browser = new Safari();
+        boolean onBrowser = true;
+        while(onBrowser){
+            int input = 0;
+            System.out.println("What you wanna do?");
+            System.out.println("1 - Go to page");
+            System.out.println("2 - Add new Tab");
+            System.out.println("3 - Refresh Page");
+            System.out.println("4 - Exit");
+            input = getAndValidateInput();
+            if (input == 1) {
+                System.out.println("Type the url of page:");
+                sc.nextLine();
+                String url = sc.nextLine();
+                browser.displayPage(url);
+            }
+            if (input == 2)
+                browser.addNewTab();
+            if (input == 3)
+                browser.refreshPage();
+            if (input == 4)
+                onBrowser = false;
         }
     }
 
