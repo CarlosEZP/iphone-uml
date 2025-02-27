@@ -1,5 +1,6 @@
 package src;
 
+import src.classes.PhoneCaller;
 import src.classes.Safari;
 import src.exceptions.IllegalMusicExecution;
 import src.interfaces.MusicPlayer;
@@ -25,6 +26,8 @@ public class Iphone{
 
             if(input == 1)
                 musicPlayer();
+            if(input == 2)
+                caller();
             if(input == 3)
                 internetBrowser();
             if(input == 4)
@@ -87,6 +90,33 @@ public class Iphone{
                 browser.refreshPage();
             if (input == 4)
                 onBrowser = false;
+        }
+    }
+
+    public static void caller(){
+        System.out.println("Opening caller..");
+        PhoneCaller caller = new PhoneCaller();
+        boolean onCaller = true;
+        while(onCaller){
+            int input;
+            System.out.println("What you wanna do?");
+            System.out.println("1 - Call");
+            System.out.println("2 - Answer Call");
+            System.out.println("3 - Send Voice Message");
+            System.out.println("4 - Exit");
+            input = getAndValidateInput();
+            if (input == 1) {
+                System.out.println("Type the phone:");
+                sc.nextLine();
+                String phone = sc.nextLine();
+                caller.call(phone);
+            }
+            if (input == 2)
+                caller.answerCall();
+            if (input == 3)
+                caller.sendVoiceMessage();
+            if (input == 4)
+                onCaller = false;
         }
     }
 
